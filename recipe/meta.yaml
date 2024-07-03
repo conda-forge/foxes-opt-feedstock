@@ -10,16 +10,15 @@ source:
   sha256: c62beae1172a439304f4b07222b22e133bde7b88365d9e8f6c62eafc91f791e7
 
 build:
-  noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python
     - pip
   run:
-    - python >=3.8
+    - python
     - foxes >=0.7.4
     - iwopy >=0.2.2
     - pymoo >=0.6
