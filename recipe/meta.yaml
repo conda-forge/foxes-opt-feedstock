@@ -1,5 +1,5 @@
 {% set name = "foxes-opt" %}
-{% set version = "0.1.7" %}
+{% set version = "0.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/FraunhoferIWES/foxes-opt/archive/v{{ version }}.tar.gz
-  sha256: a6a811ad78ad30402b8901d58f7c0e0b69ec4e64729948b4b81ca14bc503576b
+  sha256: c92d38565ee88f702475cdf697de6dcccf753504e4d5d9d776e4bfa82e21735c
 
 build:
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
@@ -17,10 +17,11 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
   run:
     - python
-    - foxes >=0.7.4
-    - iwopy >=0.2.2
+    - foxes >=1.0
+    - iwopy >=0.3
     - pymoo >=0.6
 
 test:
