@@ -1,5 +1,6 @@
 {% set name = "foxes-opt" %}
 {% set version = "0.2.1" %}
+{% set python_min = "3.8" %}
 
 package:
   name: {{ name|lower }}
@@ -10,17 +11,18 @@ source:
   sha256: c168e0e32c196e5d6fde674bee717c0e17797ac621d47096d82b293f8558b558
 
 build:
+  noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   number: 0
 
 requirements:
   host:
-    - python
+    - python {{ python_min }}
     - pip
     - setuptools
   run:
-    - python
-    - foxes >=1.0
+    - python >={{ python_min }}
+    - foxes >=1.2
     - iwopy >=0.3
     - pymoo >=0.6
 
@@ -28,6 +30,7 @@ test:
   imports:
     - foxes
   requires:
+    - python {{ python_min }}
     - pip
     - pytest
   source_files:
