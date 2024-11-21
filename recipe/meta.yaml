@@ -17,7 +17,7 @@ build:
 
 requirements:
   host:
-    - python {{ python_min }}
+    - python
     - pip
     - setuptools
   run:
@@ -30,7 +30,7 @@ test:
   imports:
     - foxes-opt
   requires:
-    - python {{ python_min }}
+    - python
     - pip
     - pytest
   source_files:
