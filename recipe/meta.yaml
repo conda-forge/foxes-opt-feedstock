@@ -28,7 +28,7 @@ requirements:
 
 test:
   imports:
-    - foxes-opt
+    - foxes_opt
   requires:
     - python {{ python_min }}
     - pip
