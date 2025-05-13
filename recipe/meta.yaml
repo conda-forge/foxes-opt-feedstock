@@ -25,6 +25,7 @@ requirements:
     - foxes >=1.2
     - iwopy >=0.3
     - pymoo >=0.6
+    - netcdf4
 
 test:
   imports:
