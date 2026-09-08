@@ -1,6 +1,5 @@
 {% set name = "foxes-opt" %}
 {% set version = "0.8.0" %}
-{% set python_min = "3.9" %}
 
 package:
   name: {{ name|lower }}
@@ -21,12 +20,13 @@ requirements:
   host:
     - python {{ python_min }}
     - pip
-    - setuptools
+    - setuptools >=84.0.0
   run:
     - python >={{ python_min }}
-    - foxes >=1.5.1
+    - foxes >=1.9.2
     - iwopy >=0.3.1
     - pymoo >=0.6
+    - xarray >=2023.9
     - netcdf4 >=1.7
 
 test:
@@ -35,24 +35,23 @@ test:
   requires:
     - python {{ python_min }}
     - pip
-    - pytest >=0.7
-    - h5netcdf >=1.0
+    - pytest >=7.0
   source_files:
     - tests
   commands:
     - pip check
     - pytest tests
+    - foxes_opt_yaml --help
 
 about:
   home: https://github.com/FraunhoferIWES/foxes-opt
   summary: Wind farm optimization functionality for foxes
   description: |
-    This package provides optimization functionality for the
-    wind farm and wake modelling package foxes. It is based
-    on the optimization interface package iwopy, and enables the
-    user to run fast vectorized and flexible optimizations of 
-    wind farm layouts, wind farm control parameters, or any other
-    set of related model parameters.
+    This package provides optimization functionality for the wind farm and wake
+    modelling package foxes. It is based on the optimization interface package
+    iwopy, and enables the user to run fast vectorized and flexible optimizations
+    of wind farm layouts, wind farm control parameters, or any other set of
+    related model parameters.
   license: MIT
   license_file: LICENSE
   doc_url: https://fraunhoferiwes.github.io/foxes-opt/index.html
