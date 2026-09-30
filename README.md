@@ -13,12 +13,11 @@ Development: https://github.com/FraunhoferIWES/foxes-opt
 
 Documentation: https://fraunhoferiwes.github.io/foxes-opt/index.html
 
-This package provides optimization functionality for the
-wind farm and wake modelling package foxes. It is based
-on the optimization interface package iwopy, and enables the
-user to run fast vectorized and flexible optimizations of
-wind farm layouts, wind farm control parameters, or any other
-set of related model parameters.
+This package provides optimization functionality for the wind farm and wake
+modelling package foxes. It is based on the optimization interface package
+iwopy, and enables the user to run fast vectorized and flexible optimizations
+of wind farm layouts, wind farm control parameters, or any other set of
+related model parameters.
 
 
 Current build status

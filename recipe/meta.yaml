@@ -1,5 +1,5 @@
 {% set name = "foxes-opt" %}
-{% set version = "0.8.0" %}
+{% set version = "0.9.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/FraunhoferIWES/foxes-opt/archive/v{{ version }}.tar.gz
-  sha256: 3dceeb31a48055a7612ab3dbd8ead18cd06ec01618d2b5a990afbd088f1d0ad4
+  sha256: d896f87369eba59fbeaad1974b13c1e462a741e668e529c9d1d5215225c1ebeb
 
 build:
   noarch: python
@@ -23,23 +23,25 @@ requirements:
     - setuptools >=84.0.0
   run:
     - python >={{ python_min }}
-    - foxes >=1.9.2
-    - iwopy >=0.3.1
+    - foxes >=1.9.6
+    - iwopy >=0.5.0
     - pymoo >=0.6
     - xarray >=2023.9
     - netcdf4 >=1.7
+    - pygmo >=2.19
 
 test:
   imports:
     - foxes_opt
+    - pygmo
   requires:
     - python {{ python_min }}
-    - pip
-    - pytest >=7.0
+    - pytest >=9.0.3
   source_files:
     - tests
+    - examples/layout_single_state
+    - examples/layout_wind_rose
   commands:
-    - pip check
     - pytest tests
     - foxes_opt_yaml --help
 
