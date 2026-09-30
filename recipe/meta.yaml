@@ -39,8 +39,9 @@ test:
     - pytest >=9.0.3
   source_files:
     - tests
+    - examples/layout_single_state
+    - examples/layout_wind_rose
   commands:
-    # pygmo lacks dist-info metadata, so pip check cannot detect it.
     - pytest tests
     - foxes_opt_yaml --help
 
