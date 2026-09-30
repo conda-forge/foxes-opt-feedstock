@@ -33,14 +33,14 @@ requirements:
 test:
   imports:
     - foxes_opt
+    - pygmo
   requires:
     - python {{ python_min }}
-    - pip
-    - pytest >=7.0
+    - pytest >=9.0.3
   source_files:
     - tests
   commands:
-    - pip check
+    # pygmo lacks dist-info metadata, so pip check cannot detect it.
     - pytest tests
     - foxes_opt_yaml --help
 
